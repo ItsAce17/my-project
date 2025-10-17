@@ -1,266 +1,244 @@
 html {
-    scroll-behavior: smooth;
+  scroll-behavior: smooth;
 }
 
 body::before {
-    content: "";
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: url('totoy.jpg') no-repeat center center fixed;
-    background-size: cover;
-    filter: brightness(0.5);    
-    z-index: -1;
-}
-
-
-.glass {
-  background: rgba(255,255,255,0.08);
-  border: 1px solid rgba(255,255,255,0.12);
-  backdrop-filter: blur(10px) saturate(1.05);
-  -webkit-backdrop-filter: blur(10px) saturate(1.05);
-  box-shadow: 0 8px 30px rgba(0,0,0,0.25);
-  border-radius: 20px;
-}
-
-.home, .about, .testi, .certi, .login-form, .auth-card, .contact-form, .project-box {
-  background: rgba(255,255,255,0.06);
-  border: 1px solid rgba(255,255,255,0.12);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('nature.jpg') no-repeat center center fixed;
+  background-size: cover;
+  filter: brightness(0.5);
+  z-index: -1;
 }
 
 header {
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    position: fixed;
-    width: 100%;
-    z-index: 1000;
-}
-header img {        
-    height: 100px;
-}
-.logo-name {
-    display: flex;
-    align-items: center;
-}
-.logo-name a {
-    color: rgb(200, 20, 20);
-    text-decoration: none;
-    text-transform: uppercase;
-    font-weight: 900;
-    font-size: 2vh;
-}
-.head-link a {
-    color: white ;
-    text-decoration: none;
-    text-transform: uppercase ;
-    margin-right: 20px;
-    font-size: 2vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 70%;
+  padding: 15px 8%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 1000;
 }
 
-.head-btn a {
-    text-decoration: none;
-    text-transform: uppercase;
-    margin-right: 20px;
+.logo {
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: white;
+  letter-spacing: 2px;
 }
-.login {
-    color: white;
-    padding: 6px 12px;
-    border-radius: 30px;
-    font-size: 2vh;
+
+.navbar {
+  display: flex;
+  gap: 25px;
 }
-.register {
-    color: white;
-    padding: 6px 12px;
-    border-radius: 30px;
-    font-size: 2vh;
+
+.navbar a {
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.navbar a:hover {
+  color: yellow;
+}
+
+.menu-icon {
+  display: none;
+  font-size: 2rem;
+  color: white;
+  cursor: pointer;
+}
+
+#menu-toggle {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  header {
+    padding: 12px 6%;
+  }
+
+  .menu-icon {
+    display: block;
+  }
+
+  .navbar {
+    position: absolute;
+    top: 70px;
+    left: 0;
+    width: 100%;
+    background: rgba(0,0,0,0.5);
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding: 20px 0;
+    display: none;
+  }
+
+  #menu-toggle:checked + .menu-icon + .navbar {
+    display: flex;
+  }
+
+  .navbar a {
+    font-size: 1.1rem;
+  }
+}
+
+/* Body offset so header doesn’t overlap */
+body {
+  margin: 0;
+  padding-top: 80px;
 }
 
 .home {
-    padding-top: 100px;
-    background: rgba(0, 0, 0, 0.5);
-    margin-left: 4%;
-    margin-right: 4%;
-    border-radius: 30px;
-    padding: 8%;
+  padding-top: 120px;
+  margin: 4%;
+  border-radius: 30px;
+  padding: 8%;
 }
 .home h1 {
-    color: white;
-    text-align: center;
-    text-transform: uppercase;
-    font-size: 3.5vh;
-    margin-top: auto;
+  color: white;
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 3.5vh;
 }
-.hero {
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
 
-}   
+.hero {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 20px;
+}
 .hero-text {
-    margin-right: 100px;
+  max-width: 500px;
+  text-align: center;
 }
 .hero-text h2 {
-    color: white;
-    font-size: 3.5vh;
-    text-shadow: 0px 0px 10px red,
-                0px 0px 20px red,
-                0px 0px 40px red,
-                0px 0px 80px red;
+  color: white;
+  font-size: 3.5vh;
+  text-shadow: 0 0 10px red, 0 0 20px red, 0 0 40px red, 0 0 80px red;
 }
 .hero-text h3 {
-    display: flex;
-    gap: 5px;
-    font-size: 2.5vh;
-    animation: scale 1.5s infinite;
+  display: flex;
+  gap: 5px;
+  justify-content: center;
+  font-size: 2.5vh;
+  animation: scale 1.5s infinite;
 }
 @keyframes scale {
-    0% {
-        transform: scale(1); color: rgb(240, 7, 7);
-    }
-    50% {
-        transform: scale(0.8); color: #ff7b00;
-    }
-    100% {
-        transform: scale(1); color: rgb(109, 8, 241);
-    }
-}.hero-text p {
-    margin-top: 10px;
-    color: white;
+  0% { transform: scale(1); color: rgb(240, 7, 7); }
+  50% { transform: scale(0.8); color: #ff7b00; }
+  100% { transform: scale(1); color: rgb(109, 8, 241); }
+}
+.hero-text p {
+  margin-top: 10px;
+  color: white;
+  font-size: 1rem;
 }
 .hero img {
-    border-radius: 50%;
-    height: 550px;
+  border-radius: 50%;
+  height: 400px;
+  max-width: 90%;
 }
 .social-link i {
-    color: rgb(200, 20, 20);
-    background-color: white;
-    padding: 6px;
-    border-radius: 50%;
-    margin-right: 10px;
-    font-size: 4vh;
-    transition: all .42s;
-    margin-top: 20px;
+  color: rgb(200, 20, 20);
+  background-color: white;
+  padding: 6px;
+  border-radius: 50%;
+  margin-right: 10px;
+  font-size: 4vh;
+  transition: all 0.42s;
+  margin-top: 20px;
 }
 
 .my-portrait {
-    animation: bounce 1.5s ease-in-out infinite;
+  animation: bounce 1.5s ease-in-out infinite;
 }
 @keyframes bounce {
-    0% {
-        transform: translatey(0px)
-    }
-    50% {
-        transform: translatey(-20px)
-    }
-    100% {
-        transform: translatey(0px);
-    }
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-20px); }
 }
+
 
 .about {
-    padding-top: 100px;
-    background: rgba(0, 0, 0, 0.5);
-    margin-left: 4%;
-    margin-right: 4%;
-    border-radius: 30px;
-    padding: 8%;
-    margin-top: 100px;
-
+  padding-top: 70px;
+  margin: 4%;
+  border-radius: 30px;
+  padding: 8%;
 }
 .about h1 {
-    color: white;
-    text-align: center;
-    text-transform: uppercase;  
-    font-size: 5vh;
+  color: white;
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 5vh;
 }
 .about-body {
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-wrap: wrap;
 }
-
 .about-text {
   max-width: 800px;
   margin: auto;
   text-align: justify;
   font-size: 16px;
   line-height: 1.8;
-  color: #f1f1f1; 
+  color: #f1f1f1;
 }
-.about-text p {
-  margin-bottom: 20px;
+.about-text p { margin-bottom: 20px; }
+
+#skills {
+  padding: 80px 10%;
+  text-align: center;
 }
-
-.skills {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 12px;
+#skills h2 {
+  font-size: 2em;
+  margin-bottom: 30px;
+  color: white;
 }
-
-.skill {
-    background: rgba(0, 0, 0, 0.5);
-    padding: 10px 20px;
-    border-radius: 30px;
-    font-size: 15px;
-    transition: 0.3s;
+.skill { margin: 30px 0; }
+.skill p {
+  font-weight: bold;
+  color: white;
 }
-
-.skill:hover {
-    background-color: gray;
-    transform: scale(1.1);
+.progress {
+  border-radius: 30px;
+  overflow: hidden;
+  background: white;
+  height: 20px;
+  max-width: 500px;
+  margin: 0 auto;
 }
-
-.btn {
-    display: inline-block;
-    margin-top: 25px;
-    padding: 12px 28px;
-}
-
-.btn:hover {
-    transform: translateY(-3px) scale(1.05);
-    box-shadow: 0 8px 20px rgba(20, 18, 20, 1);
-}
-
-#skills h1 {
-    text-align: center;
-    font-size: 2.5rem;
-    color: gray;
-    margin-bottom: 30px;
-}
-
-.skill {
-    margin: 20px auto;
-    max-width: 1000px;
-    text-align: center;
-}
-
-.bar {
-    background: gray;
-    border-radius: 25px;
-    overflow: hidden;
-    height: 25px;
-    width: 500px;
-    font-weight: bold;
-}
-
-
-.bar span {
-    border-radius: 25px;
+.progress-bar {
+  background: lightgreen;
+  height: 100%;
+  text-align: right;
+  padding-right: 10px;
+  font-size: 14px;
+  border-radius: 30px;
 }
 
 .testi {
-  padding: 40px 20px;
+  padding: 80px 20px;
   text-align: center;
+  color: white;
 }
 
 .testi h1 {
-  margin-bottom: 20px;
-  font-size: 2rem;
+  margin-bottom: 30px;
+  font-size: 2.5rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
 }
 
 .testi input[type="radio"] {
@@ -277,44 +255,44 @@ header img {
 
 .testi-controls .btn {
   cursor: pointer;
-  padding: 8px 14px;
+  padding: 10px 16px;
   border-radius: 8px;
-  border: 1px solid #070707;
-  background: gray;
+  border: 1px solid #fff;
   font-weight: 600;
-  transition: transform .15s ease, box-shadow .15s ease;
-  user-select: none;
+  transition: all 0.2s ease;
+  background: rgba(255,255,255,0.1);
+  color: white;
 }
 
 .testi-controls .btn:hover {
+  background: white;
+  color: black;
   transform: translateY(-3px);
-  box-shadow: gray;
 }
 
 #t1:checked ~ .testi-controls label[for="t1"],
 #t2:checked ~ .testi-controls label[for="t2"],
 #t3:checked ~ .testi-controls label[for="t3"],
 #t4:checked ~ .testi-controls label[for="t4"] {
-  background: gray;
-  border-color: gray;
-  box-shadow: 0 6px 20px rgba(0,126,255,0.08);
+  background: white;
+  color: black;
+  border-color: white;
 }
 
 .testi-panels {
   max-width: 760px;
   margin: 0 auto;
   position: relative;
-  min-height: 160px;
+  min-height: 180px;
 }
 
 .testi-panels .panel {
   display: none;
-  padding: 20px;
-  border-radius: 50px;
-  border: 1px solid gray;
-  background: gray;
-  box-shadow: 0 6px 18px rgba(16,24,40,0.03);
-  text-align: center;
+  padding: 30px;
+  border-radius: 30px;
+  background: rgba(255,255,255,0.9);
+  color: black;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.2);
   transition: opacity .25s ease, transform .25s ease;
 }
 
@@ -336,407 +314,179 @@ header img {
 }
 
 .testi-panels h3 {
-  margin: 6px 0;
-  font-size: 1.1rem;
+  margin: 10px 0;
+  font-size: 1.2rem;
 }
 
 .testi-panels p {
   margin: 6px 12px 0 12px;
-  font-size: .98rem;
+  font-size: 1rem;
   color: black;
-  line-height: 1.4;
+  line-height: 1.5;
 }
 
-@media (max-width:600px) {
-  .testi-controls .btn { padding: 8px 10px; font-size: .9rem; }
+@media (max-width: 600px) {
+  .testi {
+    padding: 60px 10px;
+  }
+  .testi-controls .btn { padding: 8px 12px; font-size: .9rem; }
   .testi-panels { padding: 0 12px; }
-}
+}                                 
+
 
 #projects {
-    padding: 50px;
-    text-align: center;
-    align-items: center;
+  padding: 80px 10%;
+  text-align: center;
 }
-
-.project-box {
-    background: rgba(0, 0, 0, 0.5);
-    border-radius: 20px;
-    padding: 30px;
-    max-width: 1000px;
-    margin: 40px auto 0;
+#projects h2 {
+  font-size: 2em;
+  color: white;
+  margin-bottom: 40px;
 }
-
-
 .project-container {
-    gap: 20px;
-    display: flex;
-    padding: 15px;
-    flex-wrap: wrap;
-    justify-content: center;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
 }
-
-.card {
-    background: gray;
-    border-radius: 15px;
-    box-shadow: gray;
-    width: 250px;
-    padding: 15px;
-    transition: transform 0.3s;
+.project-card {
+  background: lightgreen;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
 }
-
-.card:hover {
-    transform: translateY(-10px);
+.project-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.2);
 }
-
-.card img {
-    width: 100%;
-    border-radius: 10px;
+.project-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
 }
-
-.card h3 {
-    margin: 15px 0 10px;
+.project-info {
+  padding: 20px;
 }
-
-.card p {
-    font-size: 14px;
-    color: gray;
+.project-info h3 {
+  margin: 10px 0;
+  color: black;
 }
-
-.card a {
-    display: inline-block;
-    margin-top: 10px;
-    padding: 8px 15px;
-    background: gray;
-    color: white;
-    border-radius: 8px;
-    text-decoration: none;
-    transition: background 0.3s;
+.project-info p {
+  font-size: 0.95em;
+  color: #555;
+  margin-bottom: 15px;
 }
-
-.card a:hover {
-    background: gray;
-}
-
 
 .certi {
-    padding-top: 100px;
-    background: gray;
-    margin-left: 4%;
-    margin-right: 4%;
-    border-radius: 30px;
-    padding: 7.8%;
-    margin-top: 100px;
+  padding: 100px 8%;
+  text-align: center;
 }
 .certi h1 {
-    color: white;
-    text-align: center;
-    text-transform: uppercase;
-    letter-spacing: 20px;
-    font-size: 3.5vh;
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: 10px;
+  font-size: 3vh;
+  margin-bottom: 40px;
 }
 .certi-body {
-    background: rgba(0, 0, 0, 0.5);
-    border-radius: 30px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
 }
 .certi img {
-    height: 500px;
-    border-radius: 30px;
+  height: 400px;
+  width: auto;
+  border-radius: 20px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+  transition: transform 0.3s;
 }
-.friends {
-    padding: 50px;
-    text-align: center;
-}
-.friends h2 {
-    color: white;
-    text-transform: uppercase;
-}
-.friends p {
-    color: white;
-    text-transform: uppercase;
+.certi img:hover {
+  transform: scale(1.05);
 }
 
-
-.copy-right p {
-    color: white;
-    text-align: center;
-    text-transform: capitalize;
+@media (max-width: 768px) {
+  .certi img {
+    height: 250px;
+  }
 }
 
-.login-form {
-    margin: 20vh;
-    background: rgba(0, 0, 0, 0.5);
-    border-radius: 30px;
-    padding: 10vh 5vh;
-    width: 100%;
-    max-width: 400px;
-    
-}
-.login-top {
-    display: flex;
-    align-items: end;
-}
-.login-form img {
-    height: 150px;
-    animation: rotate 2s ease infinite;
-}
-.login-form h1 {
-    font-size: 3vh;
-    color: rgb(200, 20, 20);
-}
-
-.login-body {
-    margin-bottom: 3vh;
-}
-.login-body input {
-    width: 100%;
-    font-size: 1.5vh;
-    border: 1px solid black;
-    border-radius: 8px;
-    cursor: pointer;
-    outline: none;
-    padding: 14px 12px;
-    transform: .3s ease;
-    margin-bottom: 20px;
-}
-.login-body label {
-    color: rgb(200, 20, 20);
-}
-.login-btn {
-    padding: 10px 185px;
-    font-size: 2vh;
-    margin-top: 10px;
-    background-color: rgb(200, 20, 20);
-    border-radius: 8px;
-    color: white;
-}
-.login-btn:hover {
-    background-color: red;
-}
-.sign-up {
-    display: flex;
-    align-items: center;
-}
-.sign-up h2 {
-    color: white;
-    font-size: 2vh;
-}
-.sign-up a {
-    color: rgb(200, 20, 20);
-    font-size: 1.5vh;
-    text-decoration: none;
-    margin-left: 2vh;
-}
-.sign-up a:hover {
-    color: red;
-    text-decoration: underline;
-}
-
-@media (max-width: 480px) {
-.login-form {
-    padding: 30px 20px;
-    }
-}
-  
 .contact {
-    padding-top: 100px;
-    background: rgba(0,0,0,0.6);
-    margin: 4%;
-    border-radius: 30px;
-    padding: 8%;
-    margin-top: 100px;
-    text-align: center;
+  padding: 100px 8%;
+  text-align: center;
 }
-
 .contact h1 {
-    color: white;
-    text-transform: uppercase;
-    font-size: 3.5vh;
-    margin-bottom: 40px;
-    letter-spacing: 5px;
+  color: white;
+  text-transform: uppercase;
+  font-size: 3vh;
+  margin-bottom: 40px;
+  letter-spacing: 5px;
 }
 
 .contact-box {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    flex-wrap: wrap;
-    margin-bottom: 50px;
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+  margin-bottom: 60px;
 }
 
 .contact-card {
-    background: linear-gradient(135deg, #ff416c, #ff4b2b);
-    color: white;
-    border-radius: 20px;
-    width: 250px;
-    padding: 30px 20px;
-    transition: 0.3s;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+  background: linear-gradient(135deg, #ff416c, #ff4b2b);
+  color: white;
+  border-radius: 20px;
+  width: 260px;
+  padding: 30px 20px;
+  transition: 0.3s;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.3);
 }
-
 .contact-card:hover {
-    transform: translateY(-10px) scale(1.05);
-    box-shadow: 0 12px 30px rgba(0,0,0,0.5);
+  transform: translateY(-10px) scale(1.05);
 }
-
 .contact-card i {
-    font-size: 40px;
-    margin-bottom: 15px;
-    color: yellow;
-}
-
-.contact-card h3 {
-    margin-bottom: 10px;
-    font-size: 2vh;
-    text-transform: uppercase;
-}
-
-.contact-card p {
-    font-size: 1.8vh;
-    opacity: 0.9;
+  font-size: 40px;
+  margin-bottom: 15px;
+  color: yellow;
 }
 
 .contact-form {
-    background: rgba(255,255,255,0.1);
-    padding: 40px;
-    border-radius: 20px;
-    max-width: 600px;
-    margin: 0 auto;
+  background: rgba(255,255,255,0.1);
+  padding: 40px;
+  border-radius: 20px;
+  max-width: 600px;
+  margin: 0 auto;
 }
-
-.contact-form h2 {
-    color: white;
-    margin-bottom: 20px;
-    text-transform: uppercase;
-}
-
 .contact-form input,
 .contact-form textarea {
-    width: 100%;
-    margin-bottom: 15px;
-    padding: 12px;
-    border-radius: 10px;
-    border: none;
-    outline: none;
-    font-size: 1rem;
-}
-
-.contact-form button {
-    padding: 12px 20px;
-    background: linear-gradient(135deg, #ff416c, #ff4b2b);
-    color: white;
-    border: none;
-    border-radius: 10px;
-    font-size: 1rem;
-    transition: 0.3s;
-    cursor: pointer;
-}
-
-.contact-form button:hover {
-    background: linear-gradient(135deg, #00c6ff, #0072ff);
-    transform: scale(1.05);
-}
-.auth-body {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  background: linear-gradient(135deg, #1d2671, #c33764);
-  font-family: Arial, sans-serif;
-}
-
-.auth-card {
-  background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(12px);
-  border-radius: 20px;
-  padding: 40px;
-  width: 350px;
-  text-align: center;
-  color: white;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
-  animation: fadeIn 1s ease-in-out;
-}
-
-.auth-card h1 {
-  margin-bottom: 20px;
-  font-size: 2rem;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-}
-
-.auth-card form {
-  display: flex;
-  flex-direction: column;
-}
-
-.auth-card input {
-  margin: 10px 0;
+  width: 100%;
+  margin-bottom: 15px;
   padding: 12px;
   border-radius: 10px;
   border: none;
   outline: none;
   font-size: 1rem;
-  background: rgba(255,255,255,0.2);
-  color: white;
 }
-
-.auth-card input::placeholder {
-  color: rgba(255, 255, 255, 0.7);
-}
-
-.auth-card button {
-  margin-top: 15px;
-  padding: 12px;
-  border: none;
-  border-radius: 10px;
+.contact-form button {
+  padding: 12px 20px;
   background: linear-gradient(135deg, #ff416c, #ff4b2b);
   color: white;
+  border: none;
+  border-radius: 10px;
   font-size: 1rem;
-  cursor: pointer;
   transition: 0.3s;
+  cursor: pointer;
 }
-
-.auth-card button:hover {
+.contact-form button:hover {
   background: linear-gradient(135deg, #00c6ff, #0072ff);
   transform: scale(1.05);
 }
 
-.auth-card p {
-  margin-top: 20px;
-  font-size: 0.9rem;
+@media (max-width: 768px) {
+  .contact-box {
+    flex-direction: column;
+    align-items: center;
+  }
+  .contact-card {
+    width: 90%;
+  }
 }
-
-.auth-card a {
-  color: #ffd700;
-  text-decoration: none;
-  transition: 0.3s;
-}
-
-.auth-card a:hover {
-  text-decoration: underline;
-  color: #ffeb3b;
-}
-
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(-30px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-.dance {
-  text-align: center;
-  margin-top: 50px;
-}
-
-.dancer {
-  width: 200px;
-  border-radius: 50%;
-  animation: dance 2s infinite;
-}
-
-@keyframes dance {
-  0%   { transform: rotate(0deg) translateY(0); }
-  25%  { transform: rotate(-10deg) translateY(-10px); }
-  50%  { transform: rotate(10deg) translateY(0); }
-  75%  { transform: rotate(-10deg) translateY(10px); }
-  100% { transform: rotate(0deg) translateY(0); }
-}
-
