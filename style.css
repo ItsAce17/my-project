@@ -95,11 +95,10 @@ header {
 
 body {
   margin: 0;
-  padding-top: 80px;
 }
 
 .home {
-  padding-top: 120px;
+  padding: 50px 8% 30px;
   margin: 4%;
   border-radius: 30px;
   padding: 8%;
@@ -171,10 +170,9 @@ body {
 
 
 .about {
-  padding-top: 70px;
-  margin: 4%;
+  padding: 0px 8% 30px;
   border-radius: 30px;
-  padding: 8%;
+  margin-top: -20px;
 }
 .about h1 {
   color: white;
@@ -199,7 +197,7 @@ body {
 .about-text p { margin-bottom: 20px; }
 
 #skills {
-  padding: 80px 10%;
+  padding: 50px 8% 30px;
   text-align: center;
 }
 #skills h2 {
@@ -230,7 +228,7 @@ body {
 }
 
 .testi {
-  padding: 80px 20px;
+  padding: 50px 8% 30px;
   text-align: center;
   color: white;
 }
@@ -343,7 +341,7 @@ body {
 
 
 #projects {
-  padding: 80px 10%;
+  padding: 50px 8% 30px;
   text-align: center;
 }
 #projects h2 {
@@ -386,8 +384,9 @@ body {
 }
 
 .certi {
-  padding: 100px 8%;
+  padding: 50px 8% 30px;
   text-align: center;
+  margin-bottom: 0;
 }
 .certi h1 {
   color: white;
@@ -420,13 +419,14 @@ body {
 
 @media (max-width: 768px) {
   .certi img {
-    height: 150px;
+    height: 190px;
   }
 }
 
 .contact {
-  padding: 100px 8%;
+  padding: 30px 8% 60px;
   text-align: center;
+  margin-top: 0;
 }
 
 .contact h2 {
