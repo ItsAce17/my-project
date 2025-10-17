@@ -63,7 +63,7 @@ header {
 
 @media (max-width: 768px) {
   header {
-    padding: 12px 6%;
+    padding: 8px 4%;
   }
 
   .menu-icon {
@@ -72,14 +72,14 @@ header {
 
   .navbar {
     position: absolute;
-    top: 70px;
+    top: 50px;
     left: 0;
     width: 100%;
     background: rgba(0,0,0,0.5);
     flex-direction: column;
     align-items: center;
-    gap: 20px;
-    padding: 20px 0;
+    gap: 10px;
+    padding: 10px 0;
     display: none;
   }
 
@@ -88,9 +88,10 @@ header {
   }
 
   .navbar a {
-    font-size: 1.1rem;
+    font-size: 1rem;
   }
 }
+
 
 body {
   margin: 0;
@@ -327,11 +328,18 @@ body {
 
 @media (max-width: 600px) {
   .testi {
-    padding: 60px 10px;
+    padding: 20px 10px;
   }
-  .testi-controls .btn { padding: 8px 12px; font-size: .9rem; }
-  .testi-panels { padding: 0 12px; }
-}                                 
+
+  .testi-controls .btn {
+    padding: 6px 10px;
+    font-size: 0.85rem;
+  }
+
+  .testi-panels {
+    padding: 0 8px;
+  }
+}
 
 
 #projects {
@@ -369,11 +377,11 @@ body {
 }
 .project-info h3 {
   margin: 10px 0;
-  color: black;
+  color: white;
 }
 .project-info p {
   font-size: 0.95em;
-  color: #555;
+  color: white;
   margin-bottom: 15px;
 }
 
@@ -388,6 +396,11 @@ body {
   font-size: 3vh;
   margin-bottom: 40px;
 }
+
+.certi h2 {
+  color: white;
+}
+
 .certi-body {
   display: flex;
   flex-wrap: wrap;
@@ -407,7 +420,7 @@ body {
 
 @media (max-width: 768px) {
   .certi img {
-    height: 250px;
+    height: 150px;
   }
 }
 
@@ -415,6 +428,11 @@ body {
   padding: 100px 8%;
   text-align: center;
 }
+
+.contact h2 {
+  color: white;
+}
+
 .contact h1 {
   color: white;
   text-transform: uppercase;
@@ -481,12 +499,17 @@ body {
   transform: scale(1.05);
 }
 
-@media (max-width: 768px) {
+  @media (max-width: 768px) {
   .contact-box {
     flex-direction: column;
     align-items: center;
+    gap: 10px;
+    padding: 20px 0;
   }
+
   .contact-card {
     width: 90%;
+    margin: 5px 0;
+    padding: 15px;
   }
 }
