@@ -7,7 +7,7 @@ body::before {
   position: fixed;
   top: 0;
   left: 0;
-  width: 100%;
+  width: 90%;
   height: 100%;
   background: url('nature.jpg') no-repeat center center fixed;
   background-size: cover;
@@ -142,7 +142,7 @@ body {
   margin-top: 10px;
   color: white;
   font-size: 1rem;
-  text-align: justify;
+  text-align: justif;
 }
 .hero img {
   border-radius: 50%;
