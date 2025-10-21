@@ -19,12 +19,14 @@ header {
   position: fixed;
   top: 0;
   left: 0;
-  width: 80%;
+  width: 100%;
   padding: 15px 8%;
   display: flex;
   align-items: center;
   justify-content: space-between;
   z-index: 1000;
+  backdrop-filter: blur(6px);
+  background: rgba(255, 255, 255, 0.153);
 }
 
 .logo {
@@ -55,6 +57,7 @@ header {
   font-size: 2rem;
   color: white;
   cursor: pointer;
+  margin-right: 30px;
 }
 
 #menu-toggle {
@@ -219,7 +222,7 @@ body {
   margin: 0 auto;
 }
 .progress-bar {
-  background: lightgreen;
+  background: green;
   height: 100%;
   text-align: right;
   padding-right: 10px;
@@ -315,12 +318,13 @@ body {
 .testi-panels h3 {
   margin: 10px 0;
   font-size: 1.2rem;
+  color: #228B22;
 }
 
 .testi-panels p {
   margin: 6px 12px 0 12px;
   font-size: 1rem;
-  color: black;
+  color: #228B22;
   line-height: 1.5;
 }
 
@@ -355,7 +359,7 @@ body {
   gap: 25px;
 }
 .project-card {
-  background: lightgreen;
+  background: green;
   border-radius: 15px;
   overflow: hidden;
   box-shadow: 0 5px 15px rgba(0,0,0,0.1);
@@ -382,6 +386,17 @@ body {
   color: white;
   margin-bottom: 15px;
 }
+
+.btn {
+  background: red;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
 
 .certi {
   padding: 50px 8% 30px;
@@ -450,7 +465,7 @@ body {
 }
 
 .contact-card {
-  background: linear-gradient(135deg, #ff416c, #ff4b2b);
+  background: green;
   color: white;
   border-radius: 20px;
   width: 260px;
@@ -486,7 +501,7 @@ body {
 }
 .contact-form button {
   padding: 12px 20px;
-  background: linear-gradient(135deg, #ff416c, #ff4b2b);
+  background: green;
   color: white;
   border: none;
   border-radius: 10px;
@@ -513,3 +528,12 @@ body {
     padding: 15px;
   }
 }
+
+.copy-right {
+  margin-top: auto;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
