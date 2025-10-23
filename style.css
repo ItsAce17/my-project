@@ -203,32 +203,89 @@ body {
   padding: 50px 8% 30px;
   text-align: center;
 }
-#skills h2 {
-  font-size: 2em;
-  margin-bottom: 30px;
-  color: white;
+
+.skills-section {
+  padding: 80px 8%;
+  text-align: center;
 }
-.skill { margin: 30px 0; }
-.skill p {
-  font-weight: bold;
-  color: white;
+
+.skills-section h2 {
+  font-size: 2.8rem;
+  color: #00ffcc;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+  text-shadow: 0 0 20px #00ffcc;
 }
-.progress {
-  border-radius: 30px;
+
+.skills-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 40px;
+}
+
+.skill-card {
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  padding: 30px 25px;
+  width: 280px;
+  transition: all 0.4s ease;
+  border: 1px solid rgba(0, 255, 204, 0.2);
+  position: relative;
   overflow: hidden;
-  background: white;
-  height: 20px;
-  max-width: 500px;
-  margin: 0 auto;
+  box-shadow: 0 0 25px rgba(0, 255, 204, 0.05);
 }
-.progress-bar {
-  background: green;
+
+.skill-card:hover {
+  transform: translateY(-10px) scale(1.03);
+  border-color: #00ffcc;
+  box-shadow: 0 0 25px rgba(0, 255, 204, 0.4);
+}
+
+.skill-icon {
+  font-size: 4rem;
+  margin-bottom: 15px;
+  text-shadow: 0 0 20px currentColor;
+}
+
+.skill-card h3 {
+  color: white;
+  margin-bottom: 10px;
+  letter-spacing: 1px;
+}
+
+.progress {
+  width: 100%;
+  height: 10px;
+  background: rgba(255,255,255,0.15);
+  border-radius: 50px;
+  overflow: hidden;
+  margin-top: 10px;
+}
+
+.bar {
+  width: 0%;
   height: 100%;
-  text-align: right;
-  padding-right: 10px;
-  font-size: 14px;
-  border-radius: 30px;
+  background: linear-gradient(90deg, #00ffcc, #00aaff);
+  border-radius: 50px;
+  transition: width 2s ease-in-out;
+  box-shadow: 0 0 15px #00ffcc;
 }
+
+@media (max-width: 768px) {
+  .skills-grid {
+    gap: 25px;
+  }
+  .skill-card {
+    width: 100%;
+    max-width: 320px;
+  }
+  .skill-icon {
+    font-size: 3rem;
+  }
+}
+
+
 
 .testi {
   padding: 50px 8% 30px;
@@ -236,207 +293,190 @@ body {
   color: white;
 }
 
-.testi h1 {
-  margin-bottom: 30px;
-  font-size: 2.5rem;
-  text-transform: uppercase;
+/* ========== TESTIMONIAL SECTION ========== */
+
+/* ========== TESTIMONIALS ========== */
+#testimonials {
+  padding: 80px 8%;
+  text-align: center;
+  overflow: hidden;
+  border-radius: 25px;
+  margin-top: 70px;
+}
+
+#testimonials h2 {
+  font-size: 2.5em;
+  color: #00ffcc;
+  text-shadow: 0 0 15px #00ffcc;
+  margin-bottom: 60px;
   letter-spacing: 2px;
 }
 
-.testi input[type="radio"] {
-  display: none;
-}
-
-.testi-controls {
-  display: inline-flex;
-  gap: 8px;
-  margin-bottom: 24px;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-
-.testi-controls .btn {
-  cursor: pointer;
-  padding: 10px 16px;
-  border-radius: 8px;
-  border: 1px solid #fff;
-  font-weight: 600;
-  transition: all 0.2s ease;
-  background: rgba(255,255,255,0.1);
-  color: white;
-}
-
-.testi-controls .btn:hover {
-  background: white;
-  color: black;
-  transform: translateY(-3px);
-}
-
-#t1:checked ~ .testi-controls label[for="t1"],
-#t2:checked ~ .testi-controls label[for="t2"],
-#t3:checked ~ .testi-controls label[for="t3"],
-#t4:checked ~ .testi-controls label[for="t4"] {
-  background: white;
-  color: black;
-  border-color: white;
-}
-
-.testi-panels {
-  max-width: 760px;
-  margin: 0 auto;
+.testimonial-wrapper {
   position: relative;
-  min-height: 180px;
+  max-width: 800px;
+  margin: 0 auto;
+  height: 200px;
 }
 
-.testi-panels .panel {
-  display: none;
-  padding: 30px;
-  border-radius: 30px;
-  background: rgba(255,255,255,0.9);
-  color: black;
-  box-shadow: 0 6px 18px rgba(0,0,0,0.2);
-  transition: opacity .25s ease, transform .25s ease;
+.testimonial {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%) translateY(30px) scale(0.9);
+  opacity: 0;
+  background: rgba(255,255,255,0.08);
+  border-radius: 20px;
+  padding: 30px 40px;
+  width: 100%;
+  max-width: 600px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+  color: white;
+  transition: all 1s ease;
 }
 
-#t1:checked ~ .testi-panels .panel1,
-#t2:checked ~ .testi-panels .panel2,
-#t3:checked ~ .testi-panels .panel3,
-#t4:checked ~ .testi-panels .panel4 {
+.testimonial.active {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0) scale(1);
+  animation: floatIn 1s ease forwards;
+}
+
+@keyframes floatIn {
+  0% {
+    opacity: 0;
+    transform: translateX(100%) scale(0.8);
+  }
+  50% {
+    opacity: 1;
+    transform: translateX(-50%) scale(1);
+  }
+  100% {
+    transform: translateX(-50%) scale(1);
+  }
+}
+
+.testimonial p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 15px;
+  color: #eaeaea;
+}
+
+.testimonial h3 {
+  color: #00ffcc;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  #testimonials {
+    padding: 60px 5%;
+  }
+
+  .testimonial {
+    padding: 25px;
+    font-size: 0.95rem;
+  }
+
+  #testimonials h2 {
+    font-size: 2em;
+  }
+}
+
+
+.project-carousel {
+  position: relative;
+  width: 100%;
+  max-width: 420px;
+  margin: 0 auto;
+  padding: 20px 0;
+}
+
+.carousel-window {
+  overflow: hidden; /* hides other slides */
+  width: 100%;
+  border-radius: 20px;
+  background: transparent; /* ✅ clear background */
+}
+
+.carousel-track {
+  display: flex;
+  transition: transform 0.5s ease;
+  width: 100%;
+}
+
+.project-card {
+  min-width: 100%;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(0, 255, 204, 0.2);
+  border-radius: 20px;
+  overflow: hidden;
+  backdrop-filter: blur(10px);
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  box-sizing: border-box;
+}
+
+.project-card img {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
   display: block;
 }
 
-.panel-img {
-  width: 80px;
-  height: 80px;
-  object-fit: cover;
-  border-radius: 50%;
-  margin-bottom: 10px;
-  display: inline-block;
-  border: 3px solid gray;
-}
-
-.testi-panels h3 {
-  margin: 10px 0;
-  font-size: 1.2rem;
-  color: #228B22;
-}
-
-.testi-panels p {
-  margin: 6px 12px 0 12px;
-  font-size: 1rem;
-  color: #228B22;
-  line-height: 1.5;
-}
-
-@media (max-width: 600px) {
-  .testi {
-    padding: 20px 10px;
-  }
-
-  .testi-controls .btn {
-    padding: 6px 10px;
-    font-size: 0.85rem;
-  }
-
-  .testi-panels {
-    padding: 0 8px;
-  }
-}
-
-
-#projects {
-  padding: 50px 8% 30px;
+.project-content {
+  padding: 15px 20px;
   text-align: center;
 }
-#projects h2 {
-  font-size: 2em;
-  color: white;
-  margin-bottom: 40px;
-}
-.project-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 25px;
-}
-.project-card {
-  background: green;
-  border-radius: 15px;
-  overflow: hidden;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-  transition: transform 0.3s, box-shadow 0.3s;
-}
-.project-card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 10px 20px rgba(0,0,0,0.2);
-}
-.project-card img {
-  width: 100%;
-  height: 180px;
-  object-fit: cover;
-}
-.project-info {
-  padding: 20px;
-}
-.project-info h3 {
-  margin: 10px 0;
-  color: white;
-}
-.project-info p {
-  font-size: 0.95em;
-  color: white;
-  margin-bottom: 15px;
-}
 
-.btn {
-  background: red;
+/* Buttons */
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: #00e6cc;
   color: white;
   border: none;
-  padding: 10px 20px;
-  border-radius: 8px;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  font-size: 20px;
   cursor: pointer;
-  font-size: 16px;
-}
-
-
-.certi {
-  padding: 50px 8% 30px;
-  text-align: center;
-  margin-bottom: 0;
-}
-.certi h1 {
-  color: white;
-  text-transform: uppercase;
-  letter-spacing: 10px;
-  font-size: 3vh;
-  margin-bottom: 40px;
-}
-
-.certi h2 {
-  color: white;
-}
-
-.certi-body {
   display: flex;
-  flex-wrap: wrap;
+  align-items: center;
   justify-content: center;
-  gap: 30px;
-}
-.certi img {
-  height: 400px;
-  width: auto;
-  border-radius: 20px;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
-  transition: transform 0.3s;
-}
-.certi img:hover {
-  transform: scale(1.05);
+  transition: 0.3s;
+  z-index: 10;
 }
 
+.carousel-btn:hover {
+  background: #00bfa6;
+}
+
+.carousel-btn.prev {
+  left: 10px;
+}
+
+.carousel-btn.next {
+  right: 10px;
+}
+
+/* Responsive */
 @media (max-width: 768px) {
-  .certi img {
-    height: 190px;
+  .project-card {
+    min-width: 95%;
+  }
+  .carousel-btn {
+    width: 32px;
+    height: 32px;
+    font-size: 18px;
   }
 }
+
+
+
 
 .contact {
   padding: 30px 8% 60px;
